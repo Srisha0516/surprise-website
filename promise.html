@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>My Promise 💍</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Poppins&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #e6f0ff;
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      padding: 60px 20px;
+      color: #234;
+    }
+
+    .note-box {
+      max-width: 700px;
+      margin: auto;
+      padding: 40px;
+      background: linear-gradient(135deg, #ffffff, #d6eaff);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(74, 144, 226, 0.2);
+      font-size: 1.2rem;
+      line-height: 1.8;
+    }
+
+    .note-title {
+      font-family: 'Sacramento', cursive;
+      font-size: 2.8rem;
+      color: #4a90e2;
+      margin-bottom: 30px;
+    }
+
+    #promise-text {
+      text-align: left;
+      white-space: pre-wrap;
+    }
+
+    .ending {
+      margin-top: 40px;
+      font-size: 1rem;
+      color: #345;
+    }
+
+    button {
+      margin-top: 30px;
+      padding: 10px 26px;
+      font-size: 1rem;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #6ea8fe, #a3c9f9);
+      border: none;
+      border-radius: 25px;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="note-box">
+    <div class="note-title">A Promise from Me 💍</div>
+    <div id="promise-text"></div>
+    <div class="ending">– Yours, always 🤍</div>
+
+    <!-- 🌸 Exit Button -->
+    <button onclick="exitPage()">🕊 Exit This Little World</button>
+  </div>
+
+  <script>
+    const text = `I promise to be there — in moments big and small. 💫
+
+To laugh with you when life is silly,  
+To listen when you just need someone,  
+To hold space for your dreams,  
+And to always remind you how loved you are.
+
+I can’t promise perfect days, but I promise you my heart — fully, truly, honestly.
+
+This isn’t just a note. It’s a forever kind of thing. 🌷`;
+
+    const container = document.getElementById("promise-text");
+    let i = 0;
+
+    function typeText() {
+      if (i < text.length) {
+        container.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeText, 40);
+      }
+    }
+
+    setTimeout(typeText, 500);
+
+    function exitPage() {
+      window.open('', '_self', '');
+      window.close();
+      setTimeout(() => {
+        window.location.href = "https://www.google.com"; // or your page
+      }, 100);
+    }
+  </script>
+
+</body>
+</html>

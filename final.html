@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>The Final Surprise 🎥</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #e1f4ff, #b3e5fc);
+      font-family: "Poppins", sans-serif;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    h1 {
+      color: #0077b6;
+      font-size: 2rem;
+    }
+
+    .video-container {
+      margin-top: 30px;
+    }
+
+    video {
+      width: 80%;
+      max-width: 600px;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-link {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 26px;
+      background: linear-gradient(135deg, #6ea8fe, #a3c9f9);
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      transition: transform 0.2s ease;
+    }
+
+    .btn-link:hover {
+      transform: scale(1.05);
+    }
+
+    .exit-btn {
+      margin-top: 20px;
+      display: inline-block;
+      background-color: #0077b6;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .exit-btn:hover {
+      background-color: #005f87;
+    }
+  </style>
+</head>
+<body>
+  <h1>Here's something I made just for you 💙</h1>
+
+  <div class="video-container">
+    <video controls autoplay>
+      <source src="video.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <!-- 🌙 My Promise Button -->
+  <br>
+  <a class="btn-link" href="promise.html">💍 My Promise to You</a>
+
+  <!-- 🚪 Exit Button -->
+  <br>
+  <a class="exit-btn" href="index.html">Exit</a>
+</body>
+</html>

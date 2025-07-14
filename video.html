@@ -1,0 +1,158 @@
+<!-- video.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Our Memory Reel 🎥</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      font-family: 'Poppins', sans-serif;
+      color: white;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      color: #8ecae6;
+      font-size: 2rem;
+      margin: 30px 0 20px;
+      animation: fadeIn 2s ease-out;
+    }
+
+    .video-section {
+      display: none;
+    }
+
+    .video-section.active {
+      display: block;
+    }
+
+    video {
+      width: 100vw;
+      max-height: 70vh;
+      object-fit: contain;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .swipe-hint {
+      color: #8ecae6;
+      font-size: 1rem;
+      margin-top: 20px;
+      animation: fadeIn 2s ease-out;
+    }
+
+    .next-btn {
+      margin-top: 20px;
+      padding: 10px 24px;
+      font-size: 1rem;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #8ecae6, #b3d8f0);
+      border: none;
+      border-radius: 25px;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      transition: background 0.3s ease;
+    }
+
+    .next-btn:hover {
+      background: #5aaed6;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(135deg, #b3e5fc, #e1f4ff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+      cursor: pointer;
+      flex-direction: column;
+      animation: fadeIn 1s;
+    }
+
+    .overlay h2 {
+      font-size: 2rem;
+      color: #0077b6;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    }
+
+    .overlay p {
+      color: #0077b6;
+      margin-top: 10px;
+      font-size: 1rem;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Curtain Overlay -->
+  <div class="overlay" id="curtain">
+    <h2>💙 Tap to Watch</h2>
+    <p>A little something just for you...</p>
+  </div>
+
+  <!-- Content Area -->
+  <div id="content" style="opacity: 0;">
+    <h1>🎬 Our Special Video Moments</h1>
+
+    <div id="video1" class="video-section active">
+      <video id="vid1" controls>
+        <source src="videos/video1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="swipe-hint">➡️ Swipe for the next video</div>
+      <button class="next-btn" onclick="showNext('video2')">Next ➡️</button>
+    </div>
+
+    <div id="video2" class="video-section">
+      <video id="vid2" controls>
+        <source src="videos/video2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="swipe-hint">➡️ Swipe for the next video</div>
+      <button class="next-btn" onclick="showNext('video3')">Next ➡️</button>
+    </div>
+
+    <div id="video3" class="video-section">
+      <video id="vid3" controls>
+        <source src="videos/video3.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <button class="next-btn" onclick="location.href='promise.html'">💍 A Promise From Me</button>
+    </div>
+  </div>
+
+  <script>
+    const curtain = document.getElementById('curtain');
+    const content = document.getElementById('content');
+
+    curtain.addEventListener('click', () => {
+      curtain.classList.add('hidden');
+      content.style.opacity = 1;
+      document.getElementById("vid1").play();
+    });
+
+    function showNext(id) {
+      document.querySelectorAll('.video-section').forEach(section => section.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      document.getElementById(id).querySelector("video").play();
+    }
+  </script>
+
+</body>
+</html>
